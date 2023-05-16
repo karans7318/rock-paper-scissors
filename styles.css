@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 20px;
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+.rps-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 50px;
+}
+.rps-options button{
+    background-color: orange;
+    color: green;
+    width: 200px;
+    height: 200px;
+    font-size: 6rem;
+    border-radius: 3rem;
+    box-shadow: 1px 1px 1px 1px black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;;
+}
+
+.rps-options button:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
