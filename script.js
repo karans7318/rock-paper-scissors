@@ -1,75 +1,97 @@
-console.log("hello wo")
-const button = document.querySelectorAll("button")
-const rock = document.querySelector(".rock")
-const scissors = document.querySelector(".scissors")
-const paper = document.querySelector(".paper")
+console.log("hello wo");
+const buttons = document.querySelectorAll(".option");
+// const rock = document.querySelector(".rock");
+// let scissors = document.querySelector(".scissors");
+// let paper = document.querySelector(".paper");
+const restart = document.querySelector(".restart");
 
-// build functional rock paper scissor
+
+
 // store value of user
 // compare against random result of computer
-// describe value.
-// describe tie situations
-    // Rock > Scissors
-    // Scissors > Paper
-    // Paper > Rock
+// generate score keeper
+// limit to 5 rounds
+// message on game result after 5th round
+// reset after 5th round to new game
 
-    let options = ['Rock', 'Paper', 'Scissors']
 
-    const getComputerChoice = () => {
-        return options[Math.floor(Math.random() * options.length)]
-    }
+let options = ['rock', 'paper', 'scissors'];
 
-    console.log(getComputerChoice())
+const getComputerChoice = () => {
+    return options[Math.floor(Math.random() * options.length)];
+};
 
-    const playRound = (playerSelection, computerSelection) => {
-        // if(playerSelection === computerSelection){
-        //     return `It's a tie! You and the computer chose pizza`
-        // }
+restart.addEventListener("click", event => {
+    event.preventDefault();
+    console.log("restart");
+});
+
+let x = buttons.forEach(button => {
+    button.addEventListener("click", event =>{
+        event.preventDefault();
+       getComputerChoice()
+        console.log(getComputerChoice());
+        console.log(button.value);
+    
+
+
+        const playRound = (playerSelection, computerSelection) => {
+            getComputerChoice()
+            if(playerSelection === computerSelection) {
+                console.log("tie!")
+            }
+            // switch(playerSelection, computerSelection){
+            //     case 'rock', 'scissors':
+            //     case 'paper', 'rock':
+            //     case 'scissors', 'paper':
+            //             console.log("Win!");
+            //             break;
+    
+            //     case 'rock', 'rock':
+            //     case 'paper', 'paper':
+            //     case 'scissors', 'scissors':
+            //         console.log("Tie!");
+            //         break;
+    
+               
+            //     case 'rock', 'paper':
+            //     case 'paper', 'scissors':
+            //     case 'scissors', 'rock':
+            //         console.log("Lose!");
+            //         break;
+              
+            // };
         
-         if(playerSelection = rock && computerSelection === 'Paper'){
-            return console.log(`You lost!`)
-        }
-        // else if(playerSelection === `Paper` && computerSelection === 'Scissors'){
+        let compResult = getComputerChoice()
+    
+        console.log(playRound());
+        playRound(button.value, compResult)
+       
+        };
+    });
+});
 
-        // }
-        // else if(playerSelection === `Rock` && computerSelection === 'Paper'){
-            
-        // }
-        // else if(playerSelection === `Rock` && computerSelection === 'Paper'){
-            
-        // }
-        else return 'ayo??'
-    }
-    // switch(playerSelectiion, computerSelection)
-    // case: "rock", "rock"
-    // alert('tie!')
-    // break
-
-    console.log(playRound(playerSelection, computerSelection))
+    
 
 
-    const game = () => {
-        // code here
-    }
+    let result = ['Tie!', 'Win!', 'Lose!'];
+
+   
 
 
-    // switch example usage below 
-
-//     let a = 2 + 2;
-
-// switch (a) {
-//   case 3:
-    // alert( 'Too small' ); if (a ==='3')
-//     break;
-//   case 4:
-//     alert( 'Exactly!' ); if (a ==='4')
-//     break;
-//   case 5:
-//     alert( 'Too big' ); if (a ==='5')
-//     break;
-//   default:
-//     alert( "I don't know such values" );
-// }
 
 
-// without "break" it will execute rest of code in sequence
+
+    // const game = () => {
+    //     playRound();
+    //     if(playerScore < computerScore){
+    //         console.log("Lost")
+    //     }
+    //     else if (playerScore === computerScore) {
+    //         console.log("Tied")
+    //     }
+    //     else {
+    //         console.log("Won!")
+    //     };
+
+    // };
