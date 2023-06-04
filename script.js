@@ -1,97 +1,86 @@
-console.log("hello wo");
-const buttons = document.querySelectorAll(".option");
-// const rock = document.querySelector(".rock");
-// let scissors = document.querySelector(".scissors");
-// let paper = document.querySelector(".paper");
-const restart = document.querySelector(".restart");
+console.log('hello world');
+const options = document.querySelectorAll('.option');
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const playerScore = document.getElementById('player--score');
+const computerScore = document.getElementById('computer--score');
 
 
+// pseudo-code
+// make buttons respond with values - done
+// random generation by computer - done
+// compare values and provide result of win loss or tie - done
 
-// store value of user
-// compare against random result of computer
-// generate score keeper
-// limit to 5 rounds
-// message on game result after 5th round
-// reset after 5th round to new game
+// make scores shift
+// if 5 is reached game should auto reset
+// create reset button
+// Go back to CSS and create winner and loser settings (green/red)
+
+// create initial values for reset
+// const init = () =>{
+//     score0El.textContent = 0;
+//     score1El.textContent = 0;
+    
+
+//  scores = [0, 0];
+//  currentScore = 0;
+//  activePlayer = 0;
+//  playing = true;
+
+//     current0El.textContent = 0;
+//     current1El.textContent = 0;
+//     diceEl.classList.add('hidden');
+//     player0El.classList.remove('player--winner');
+//     player1El.classList.remove('player--winner');
+//     player0El.classList.add('player--active');
+//     player1El.classList.remove('player--active');
+// }
+// init()
 
 
-let options = ['rock', 'paper', 'scissors'];
+const results = ['rock', 'paper', 'scissors'];
 
-const getComputerChoice = () => {
-    return options[Math.floor(Math.random() * options.length)];
+function getComputerChoice() {
+    return results[Math.floor(Math.random() * results.length)];
 };
 
-restart.addEventListener("click", event => {
-    event.preventDefault();
-    console.log("restart");
-});
+options.forEach(option => {
+   option.addEventListener('click', () =>{
 
-let x = buttons.forEach(button => {
-    button.addEventListener("click", event =>{
-        event.preventDefault();
-       getComputerChoice()
-        console.log(getComputerChoice());
-        console.log(button.value);
-    
-
-
-        const playRound = (playerSelection, computerSelection) => {
-            getComputerChoice()
-            if(playerSelection === computerSelection) {
-                console.log("tie!")
-            }
-            // switch(playerSelection, computerSelection){
-            //     case 'rock', 'scissors':
-            //     case 'paper', 'rock':
-            //     case 'scissors', 'paper':
-            //             console.log("Win!");
-            //             break;
-    
-            //     case 'rock', 'rock':
-            //     case 'paper', 'paper':
-            //     case 'scissors', 'scissors':
-            //         console.log("Tie!");
-            //         break;
-    
-               
-            //     case 'rock', 'paper':
-            //     case 'paper', 'scissors':
-            //     case 'scissors', 'rock':
-            //         console.log("Lose!");
-            //         break;
-              
-            // };
-        
-        let compResult = getComputerChoice()
-    
-        console.log(playRound());
-        playRound(button.value, compResult)
-       
-        };
-    });
-});
-
-    
-
-
-    let result = ['Tie!', 'Win!', 'Lose!'];
-
+    function playRound(playerSelection, computerSelection){  
+        if (playerSelection === 'rock' && computerSelection === 'scissors') {
+            console.log('win')
+        }
+        else if(playerSelection === 'scissors' && computerSelection === 'paper'){
+            console.log('win')
+        }
+        else if(playerSelection === 'paper' && computerSelection === 'rock'){
+            console.log('win')
+        }
+        // tie
+        else if(playerSelection === computerSelection) {
+            console.log('tie')
+        } else {
+            console.log('lose')
+        }
+    };
+    const playerSelection = option.value;
+    const computerSelection = getComputerChoice();
    
 
+    console.log(playerSelection);
+    console.log(computerSelection);
+    playRound(playerSelection, computerSelection); 
+    //    console.log(playRound(playerSelection, computerSelection));
+   });
+});
 
 
+function game() {
+    playRound(playerSelection, computerSelection); 
+    console.log('pizza')
 
+};
 
-    // const game = () => {
-    //     playRound();
-    //     if(playerScore < computerScore){
-    //         console.log("Lost")
-    //     }
-    //     else if (playerScore === computerScore) {
-    //         console.log("Tied")
-    //     }
-    //     else {
-    //         console.log("Won!")
-    //     };
-
-    // };
+    console.log(game())
