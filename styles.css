@@ -10,8 +10,58 @@ body{
     justify-content: center;
     align-items: center; */
 }
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
 h1{
     text-align: center;
+}
+.restart-container{
+   display: flex;
+   justify-content: center;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+.restart{
+    background-color: orange;
+    color: green;
+    width: 100px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px 1px black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.restart:hover{
+    cursor: pointer;
+}
+
+.scoreboard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.player-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.computer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.player-container p, .computer-container p{
+    color: red;
+    font-size: 3rem;
+    font-weight: 600;
 }
 .buttons{
     display: flex;
@@ -29,8 +79,8 @@ h1{
 .rps-options button{
     background-color: orange;
     color: green;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     font-size: 6rem;
     border-radius: 3rem;
     box-shadow: 1px 1px 1px 1px black;
@@ -43,17 +93,3 @@ h1{
     transform: scale(0.9);
 }
 
-.restart{
-    background-color: orange;
-    color: green;
-    width: 100px;
-    height: 50px;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 1px 1px 1px 1px black;
-    border-right: 3px solid black;
-    border-bottom: 3px solid black;;
-}
-.restart:hover{
-    cursor: pointer;
-}
